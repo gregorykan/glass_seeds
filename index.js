@@ -33,4 +33,4 @@ app.post('/parse', function (req, res) {
   res.json(wordsWithTags)
 })
 
-app.listen(port, () => console.log(`listening on port ${port}!`))
+app.listen(process.env.PORT || port, () => console.log(`listening on port ${port}!`))
