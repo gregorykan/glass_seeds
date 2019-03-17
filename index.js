@@ -17,7 +17,7 @@ app.post('/parse', function (req, res) {
   var sentence = req.body.text
   var sentenceArray = sentence
     .replace(/\b[-.,()&$#;:!–\[\]{}"']+\B|\B[-.,()&$#!\[\]{}"']+\b/g, '')
-    .replace(/(\r\n|\n|\r)/gm, '')
+    .replace(/(\r\n|\n|\r)/gm, ' ')
     .split(' ')
     .filter(Boolean)
   var tags = new Tag(sentenceArray)
